@@ -38,10 +38,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_ESC,  KC_TAB,  KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, KC_LALT, KC_SPC, KC_FN6, KC_QUOT, KC_SLSH, KC_ENT), \
 
   /* 4: hard dvorak fn */
-  KEYMAP(SHIFT(KC_1), SHIFT(KC_2),   KC_UP,       SHIFT(KC_MINS), SHIFT(KC_EQUAL),                    KC_PGUP,  KC_7,    KC_8, KC_9, SHIFT(KC_8),    \
-         SHIFT(KC_3), KC_LEFT,       KC_DOWN,     KC_RIGHT,       SHIFT(KC_4),                        KC_PGDN,  KC_4,    KC_5, KC_6, SHIFT(KC_RBRC), \
-         KC_MINS,     KC_EQUAL,      SHIFT(KC_9), SHIFT(KC_0),    SHIFT(KC_7),                        KC_GRAVE, KC_1,    KC_2, KC_3, KC_BSLS,        \
-         KC_FN7,      SHIFT(KC_INS), KC_LGUI,     KC_LSFT,        KC_BSPC,         KC_LCTL,  KC_LALT, KC_SPC, KC_FN6, KC_DOT,  KC_0, KC_EQUAL),      \
+  KEYMAP(SHIFT(KC_1), SHIFT(KC_2),   KC_UP,       SHIFT(KC_MINS), SHIFT(KC_EQUAL),                    KC_PGUP,  KC_7,    KC_8, KC_9,   SHIFT(KC_8),    \
+         SHIFT(KC_3), KC_LEFT,       KC_DOWN,     KC_RIGHT,       SHIFT(KC_4),                        KC_PGDN,  KC_4,    KC_5, KC_6,   SHIFT(KC_RBRC), \
+         KC_MINS,     KC_EQUAL,      SHIFT(KC_9), SHIFT(KC_0),    SHIFT(KC_7),                        KC_GRAVE, KC_1,    KC_2, KC_3,   KC_BSLS,        \
+         KC_FN7,      SHIFT(KC_INS), KC_LGUI,     KC_LSFT,        KC_BSPC,         KC_LCTL,  KC_LALT, KC_SPC,   KC_FN6,  KC_0, KC_DOT, KC_EQUAL),      \
 
   /* 5: hard dvorak L2 */
   KEYMAP(KC_INS, KC_HOME, KC_UP,   KC_END,   KC_PGUP,                   KC_UP,   KC_F7,   KC_F8,  KC_F9,  KC_F10, \
