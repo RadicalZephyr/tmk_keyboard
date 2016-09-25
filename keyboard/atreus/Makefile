@@ -55,7 +55,7 @@ SRC =	keymap_common.c \
 	matrix.c \
 	led.c
 
-KEYMAP ?= qwerty
+KEYMAP ?= multidvorak
 SRC := keymap_$(KEYMAP).c $(SRC)
 
 CONFIG_H = config.h
@@ -124,6 +124,7 @@ NKRO_ENABLE = yes	# USB Nkey Rollover - not yet supported in LUFA
 
 # Causes trouble on low voltage chipsets.
 OPT_DEFS += -DNO_SUSPEND_POWER_DOWN
+OPT_DEFS += -DPCBDOWN
 
 # Optimize size but this may cause error "relocation truncated to fit"
 #EXTRALDFLAGS = -Wl,--relax
@@ -150,4 +151,3 @@ include $(TOP_DIR)/rules.mk
 
 udev:
 	cp a-star.rules /etc/udev/rules.d/
-
