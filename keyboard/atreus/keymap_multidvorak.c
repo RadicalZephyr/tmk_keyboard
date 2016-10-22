@@ -32,16 +32,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_NO,  KC__VOLDOWN, KC_LGUI, KC_LSFT,  KC_BSPC, KC_LCTL, KC_LALT, KC_SPC, KC_FN2, KC_PSCREEN, KC_SLCK, KC_PAUSE), \
 
   /* 3: hard dvorak */
-  KEYMAP(KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,                      KC_F,    KC_G,    KC_C,   KC_R,   KC_L,    \
-         KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                      KC_D,    KC_H,    KC_T,   KC_N,   KC_S,    \
-         KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                      KC_B,    KC_M,    KC_W,   KC_V,   KC_Z,    \
+  KEYMAP(KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,                      KC_F,   KC_G,   KC_C,    KC_R,    KC_L,    \
+         KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                      KC_D,   KC_H,   KC_T,    KC_N,    KC_S,    \
+         KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                      KC_B,   KC_M,   KC_W,    KC_V,    KC_Z,    \
          KC_ESC,  KC_TAB,  KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, KC_LALT, KC_SPC, KC_FN6, KC_QUOT, KC_SLSH, KC_ENT), \
 
   /* 4: hard dvorak fn */
-  KEYMAP(SHIFT(KC_1), SHIFT(KC_2),   KC_UP,       SHIFT(KC_MINS), SHIFT(KC_EQUAL),                    KC_PGUP,  KC_7,    KC_8, KC_9,   SHIFT(KC_8),    \
-         SHIFT(KC_3), KC_LEFT,       KC_DOWN,     KC_RIGHT,       SHIFT(KC_4),                        KC_PGDN,  KC_4,    KC_5, KC_6,   SHIFT(KC_RBRC), \
-         KC_MINS,     KC_EQUAL,      SHIFT(KC_9), SHIFT(KC_0),    SHIFT(KC_7),                        KC_GRAVE, KC_1,    KC_2, KC_3,   KC_BSLS,        \
-         KC_FN7,      SHIFT(KC_INS), KC_LGUI,     KC_LSFT,        KC_BSPC,         KC_LCTL,  KC_LALT, KC_SPC,   KC_FN6,  KC_0, KC_DOT, KC_EQUAL),      \
+  KEYMAP(SHIFT(KC_1), SHIFT(KC_2),   SHIFT(KC_LBRC), SHIFT(KC_RBRC), SHIFT(KC_BSLS),                    KC_PGUP,     KC_7,   KC_8, KC_9,     SHIFT(KC_8), \
+         SHIFT(KC_3), SHIFT(KC_4),   SHIFT(KC_9),    SHIFT(KC_0),    KC_GRAVE,                          KC_PGDN,     KC_4,   KC_5, KC_6,     SHIFT(KC_EQUAL), \
+         SHIFT(KC_5), SHIFT(KC_6),   KC_LBRC,        KC_RBRC,        SHIFT(KC_GRAVE),                   SHIFT(KC_7), KC_1,   KC_2, KC_3,     KC_BSLS,         \
+         KC_FN7,      SHIFT(KC_INS), KC_LGUI,        KC_LSFT,        KC_BSPC,         KC_LCTL, KC_LALT, KC_SPC,      KC_FN6, KC_0, KC_EQUAL, KC_ENT), \
 
   /* 5: hard dvorak L2 */
   KEYMAP(KC_INS, KC_HOME, KC_UP,   KC_END,   KC_PGUP,                   KC_UP,   KC_F7,   KC_F8,  KC_F9,  KC_F10, \
