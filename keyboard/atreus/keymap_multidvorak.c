@@ -1,4 +1,5 @@
 #include "keymap_common.h"
+#include "light_ws2812.h"
 
 /* This layout is designed to be used on machines where the OS is
    already set to a dvorak layout. It assumes that the dvorak mapping
@@ -28,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* 2: arrows and function keys */
   KEYMAP(KC_INS,      KC_HOME, KC_UP,   KC_END,   KC_PGUP,                   KC_UP,   KC_F7,  KC_F8,      KC_F9,   KC_F10,        \
          KC_DEL,      KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN,                   KC_DOWN, KC_F4,  KC_F5,      KC_F6,   KC_F11,        \
-         KC__VOLUP,   KC_FN5,  KC_FN10, KC_FN15,  KC_FN0,                    KC_NO,   KC_F1,  KC_F2,      KC_F3,   KC_F12, \
-         KC__VOLDOWN, KC_NO,   KC_LGUI, KC_LSFT,  KC_BSPC, KC_LCTL, KC_LALT, KC_SPC,  KC_FN3, KC_PSCREEN, KC_SLCK, KC_PAUSE), \
+         KC_FN20,     KC_FN5,  KC_FN10, KC_FN15,  KC_FN0,                    KC_NO,   KC_F1,  KC_F2,      KC_F3,   KC_F12, \
+         KC_FN21,     KC_NO,   KC_LGUI, KC_LSFT,  KC_BSPC, KC_LCTL, KC_LALT, KC_SPC,  KC_FN3, KC_PSCREEN, KC_SLCK, KC_PAUSE), \
 
   /* 3: hard dvorak */
   KEYMAP(KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,                      KC_F,   KC_G,   KC_C,    KC_R,    KC_L,    \
@@ -111,12 +112,32 @@ const uint16_t PROGMEM fn_actions[] = {
   [16] = ACTION_LAYER_MOMENTARY(10), //
   [17] = ACTION_LAYER_ON(11, 1),  // switch to layer 2 hard
   [18] = ACTION_LAYER_OFF(11, 1),  // switch back to layer 0 hard
-  [19] = ACTION_LAYER_OFF(9, 1) // back to soft dvorak
+  [19] = ACTION_LAYER_OFF(9, 1), // back to soft dvorak
+  [20] = ACTION_FUNCTION(LED_WHITE),
+  [21] = ACTION_FUNCTION(LED_OFF)
 };
+
+struct cRGB led[3];
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
-  if (id == BOOTLOADER) {
-    bootloader();
-  }
+    switch (id) {
+        case BOOTLOADER:
+            bootloader();
+            break;
+
+        case LED_OFF:
+            led[0].r=00;led[0].g=00;led[0].b=00;   // LED 0 is red
+            led[1].r=00;led[1].g=00;led[1].b=00;   // LED 1 is White
+            led[2].r=00;led[2].g=00;led[2].b=00;   // LED 2 is White
+            ws2812_setleds(led, 3);
+            break;
+
+        case LED_WHITE:
+            led[0].r=16;led[0].g=16;led[0].b=16;   // LED 0 is red
+            led[1].r=16;led[1].g=16;led[1].b=16;   // LED 1 is White
+            led[2].r=16;led[2].g=16;led[2].b=16;   // LED 2 is White
+            ws2812_setleds(led, 3);
+            break;
+    }
 }
