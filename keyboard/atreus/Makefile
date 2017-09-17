@@ -124,7 +124,7 @@ NKRO_ENABLE = yes	# USB Nkey Rollover - not yet supported in LUFA
 
 # Causes trouble on low voltage chipsets.
 OPT_DEFS += -DNO_SUSPEND_POWER_DOWN
-OPT_DEFS += -DPCBDOWN
+#OPT_DEFS += -DPCBDOWN
 
 # Optimize size but this may cause error "relocation truncated to fit"
 #EXTRALDFLAGS = -Wl,--relax
