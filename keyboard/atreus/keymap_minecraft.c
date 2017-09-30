@@ -13,8 +13,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          KC_ESC, KC_TAB, KC_LALT, KC_FN0, KC_SPC, KC_LCTL, KC_FN10, KC_FN17, KC_NO, KC_FN16, KC_FN15, KC_NO),
 
   /* 1: punctuation and numbers */
-  KEYMAP(KC_NO, KC_9, KC_8, KC_7, KC_NO,                            KC_FN2, KC_NO, KC_FN2, KC_NO, KC_NO, \
-         KC_NO, KC_6, KC_5, KC_4, KC_NO,                            KC_FN3, KC_FN4, KC_FN3, KC_FN5, KC_FN12, \
+  KEYMAP(KC_NO, KC_9, KC_8, KC_7, KC_NO,                            KC_FN6, KC_NO, KC_FN2, KC_NO, KC_NO, \
+         KC_NO, KC_6, KC_5, KC_4, KC_NO,                            KC_FN7, KC_FN4, KC_FN3, KC_FN5, KC_FN12, \
          KC_NO, KC_3, KC_2, KC_1, KC_FN1,                           KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, \
          KC_ESC, KC_TAB, KC_LALT, KC_FN0, KC_SPC, KC_LCTL, KC_FN10, KC_FN17, KC_NO, KC_FN16, KC_FN15, KC_NO)
 };
