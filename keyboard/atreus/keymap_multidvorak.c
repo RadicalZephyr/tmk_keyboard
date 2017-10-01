@@ -117,7 +117,21 @@ const uint16_t PROGMEM fn_actions[] = {
   [21] = ACTION_FUNCTION(LED_OFF)
 };
 
-struct cRGB led[3];
+#define LED_COUNT 32
+
+struct cRGB leds[LED_COUNT];
+
+void set_leds(struct cRGB *leds, uint8_t count, uint8_t color) {
+    int i;
+    struct cRGB ref = {
+        .r = color,
+        .g = color,
+        .b = color,
+    };
+    for (i = 0; i < count; i++) {
+        leds[i] = ref;
+    }
+}
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
@@ -127,17 +141,13 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
             break;
 
         case LED_OFF:
-            led[0].r=00;led[0].g=00;led[0].b=00;   // LED 0 is red
-            led[1].r=00;led[1].g=00;led[1].b=00;   // LED 1 is White
-            led[2].r=00;led[2].g=00;led[2].b=00;   // LED 2 is White
-            ws2812_setleds(led, 3);
+            set_leds(leds, LED_COUNT, 0);
+            ws2812_setleds(leds, LED_COUNT);
             break;
 
         case LED_WHITE:
-            led[0].r=16;led[0].g=16;led[0].b=16;   // LED 0 is red
-            led[1].r=16;led[1].g=16;led[1].b=16;   // LED 1 is White
-            led[2].r=16;led[2].g=16;led[2].b=16;   // LED 2 is White
-            ws2812_setleds(led, 3);
+            set_leds(leds, LED_COUNT, 16);
+            ws2812_setleds(leds, LED_COUNT);
             break;
     }
 }
